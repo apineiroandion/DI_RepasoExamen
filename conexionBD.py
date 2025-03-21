@@ -66,6 +66,15 @@ class ConexionBD:
         else:
             print ("Cursor preparado")
 
+    def engadeRexistro (self, consultaSQL, *parametros):
+        try:
+            self.cursor.execute(consultaSQL, parametros)
+        except dbapi.Error as e:
+            print (e)
+        else:
+            print("rexistro insertado")
+
+
 
     def consultaSenParametros (self, consultaSQL):
         """Retorna unha lista cos rexistros dunha consulta realizada sen pasarlle parámetros.
